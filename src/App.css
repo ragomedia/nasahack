@@ -1,0 +1,254 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* App */
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Planetas de fondo */
+.background-planets {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 20s ease-in-out infinite;
+}
+
+.planet-1 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #ff6b35, #cc4a1f);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.planet-2 {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #4ecdc4, #2a8a82);
+  top: 60%;
+  right: 15%;
+  animation-delay: -5s;
+  animation-duration: 30s;
+}
+
+.planet-3 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #45b7d1, #2a7a8a);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: -10s;
+  animation-duration: 35s;
+}
+
+.planet-4 {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #f9ca24, #d4a017);
+  top: 40%;
+  right: 30%;
+  animation-delay: -15s;
+  animation-duration: 20s;
+}
+
+.planet-5 {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%, #6c5ce7, #5a4fcf);
+  top: 10%;
+  right: 40%;
+  animation-delay: -20s;
+  animation-duration: 28s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0px) translateX(20px);
+  }
+  75% {
+    transform: translateY(20px) translateX(10px);
+  }
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #cccccc;
+}
+
+/* Main */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Upload Section */
+.upload-section {
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+.upload-card {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.upload-card h2 {
+  color: #ff0000;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.upload-button {
+  background: #ff0000;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-button:hover:not(:disabled) {
+  background: #cc0000;
+}
+
+.upload-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.data-info {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: rgba(0, 102, 255, 0.1);
+  border-radius: 5px;
+  border: 1px solid #0066ff;
+  color: #0066ff;
+  font-weight: bold;
+}
+
+/* Data Section */
+.data-section {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.data-section h2 {
+  color: #0066ff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.data-table {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff0000;
+  font-weight: bold;
+}
+
+tr:hover {
+  background: rgba(0, 102, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .upload-card {
+    padding: 1.5rem;
+  }
+}
+
+
